@@ -15,6 +15,7 @@ namespace GameLoop
         public Form1()
         {
             InitializeComponent();
+            _openGLControl.InitializeContexts();
         }
     }
 }

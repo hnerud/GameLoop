@@ -1,4 +1,6 @@
-﻿namespace GameLoop
+﻿using Tao.Platform.Windows;
+
+namespace GameLoop
 {
     partial class Form1
     {
@@ -28,12 +30,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this._openGLControl = new Tao.Platform.Windows.SimpleOpenGlControl();
+            this.SuspendLayout();
+            // 
+            // _openGLControl
+            // 
+            this._openGLControl.AccumBits = ((byte)(0));
+            this._openGLControl.AutoCheckErrors = false;
+            this._openGLControl.AutoFinish = false;
+            this._openGLControl.AutoMakeCurrent = true;
+            this._openGLControl.AutoSwapBuffers = true;
+            this._openGLControl.BackColor = System.Drawing.Color.Black;
+            this._openGLControl.ColorBits = ((byte)(32));
+            this._openGLControl.DepthBits = ((byte)(16));
+            this._openGLControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._openGLControl.Location = new System.Drawing.Point(0, 0);
+            this._openGLControl.Name = "simpleOpenGlControl1";
+            this._openGLControl.Size = new System.Drawing.Size(1582, 637);
+            this._openGLControl.StencilBits = ((byte)(0));
+            this._openGLControl.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1582, 637);
+            this.Controls.Add(this._openGLControl);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Tao.Platform.Windows.SimpleOpenGlControl _openGLControl;
     }
 }
 
