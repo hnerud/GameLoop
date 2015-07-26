@@ -21,7 +21,7 @@ namespace GameLoop
         }
         static void GameLoop(double elapsedTime)
         {
-            System.Console.WriteLine("loop");
+            System.Console.WriteLine("loop2");
         }
     }
 }
