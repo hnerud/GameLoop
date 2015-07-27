@@ -51,7 +51,8 @@ namespace GameLoop
 
             _system.AddState("splash", new SplashScreenState(_system));
             _system.AddState("title_menu", new TitleMenuState());
-            _system.AddState("sprite_test", new DrawSpriteState(_textureManager));
+            _system.AddState("sprite", new DrawSpriteState(_textureManager));
+            _system.AddState("sprite_test", new TestSpriteClassState(_textureManager));
 
             //start state
             _system.ChangeState("sprite_test");
