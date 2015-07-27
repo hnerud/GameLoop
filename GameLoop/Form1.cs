@@ -36,6 +36,7 @@ namespace GameLoop
             //Load textures
 
             _textureManager.LoadTexture("face", "face.tif");
+            _textureManager.LoadTexture("face_alpha", "face_alpha.tif");
 
 
 
