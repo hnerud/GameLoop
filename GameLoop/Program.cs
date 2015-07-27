@@ -8,7 +8,7 @@ namespace GameLoop
 {
     static class Program
     {
-        static FastLoop _fastLoop = new FastLoop(GameLoop);
+        //static FastLoop _fastLoop = new FastLoop(GameLoop);
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,9 +19,9 @@ namespace GameLoop
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        static void GameLoop(double elapsedTime)
-        {
-            System.Console.WriteLine("loop2");
-        }
+        //static void GameLoop(double elapsedTime)
+        //{
+        //    System.Console.WriteLine("loop2");
+        //}
     }
 }

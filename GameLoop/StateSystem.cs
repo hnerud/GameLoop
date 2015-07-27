@@ -11,6 +11,14 @@ namespace GameLoop
 
         Dictionary<string, IGameObject> _stateStore = new Dictionary<string, IGameObject>();
         IGameObject _currentState = null;
+        public void Update(double elapsedTime)
+        {
+           if (_currentState == null)
+            {
+                return;
+            }
+            _currentState.Update(elapsedTime);
+        }
         public void Render()
         {
             if (_currentState == null)
@@ -20,15 +28,7 @@ namespace GameLoop
             _currentState.Render();
         }
 
-        public void Update(double elapsedTime)
-        {
-           if (_currentState == null)
-            {
-                return;
-            }
-            _currentState.Update(elapsedTime);
-        }
-
+        
         public void AddState(string stateId, IGameObject state)
         {
             System.Diagnostics.Debug.Assert(Exists(stateId) == false);
