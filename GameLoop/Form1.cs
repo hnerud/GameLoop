@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tao.OpenGl;
+using Tao.DevIl;
 
 namespace GameLoop
 {
@@ -18,11 +19,25 @@ namespace GameLoop
         StateSystem _system = new StateSystem();
 
         bool _fullscreen = false;
+        TextureManager _textureManager = new TextureManager();
         public Form1()
         {
-            
+            _fastLoop = new FastLoop(GameLoop);
+
             InitializeComponent();
             _openGLControl.InitializeContexts();
+
+            // Initialize DevIL
+            Il.ilInit();
+            Ilu.iluInit();
+            Ilut.ilutInit();
+            Ilut.ilutRenderer(Ilut.ILUT_OPENGL);
+
+            //Load textures
+
+            _textureManager.LoadTexture("face", "face.tif");
+
+
 
 
             if (_fullscreen)
@@ -35,9 +50,10 @@ namespace GameLoop
 
             _system.AddState("splash", new SplashScreenState(_system));
             _system.AddState("title_menu", new TitleMenuState());
+            _system.AddState("sprite_test", new DrawSpriteState(_textureManager));
 
             //start state
-            _system.ChangeState("splash");
+            _system.ChangeState("sprite_test");
         }
 
       
@@ -54,7 +70,7 @@ namespace GameLoop
             base.OnClientSizeChanged(e);
             Gl.glViewport(0, 0, this.ClientSize.Width, this.ClientSize.Height);
             Setup2DGraphics(ClientSize.Width, ClientSize.Height);
-            _fastLoop = new FastLoop(GameLoop);
+           
 
         }
 
