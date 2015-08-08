@@ -15,17 +15,21 @@ namespace GameLoop
     
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         FastLoop _fastLoop;
         StateSystem _system = new StateSystem();
 
         bool _fullscreen = false;
         TextureManager _textureManager = new TextureManager();
+=======
+>>>>>>> parent of 8665749... Unit testing phase
         public Form1()
         {
             _fastLoop = new FastLoop(GameLoop);
 
             InitializeComponent();
             _openGLControl.InitializeContexts();
+<<<<<<< HEAD
 
             // Initialize DevIL
             Il.ilInit();
@@ -87,5 +91,8 @@ namespace GameLoop
             Gl.glLoadIdentity();
         }
 
+=======
+        }
+>>>>>>> parent of 8665749... Unit testing phase
     }
 }
